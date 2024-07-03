@@ -22,8 +22,8 @@ class CityStreetsSerializer(serializers.ModelSerializer):
 
 
 class ShopSerializer(serializers.ModelSerializer):
-    city = CitySerializer(read_only="city_name")
-    street = StreetSerializer(read_only="street_name")
+    city = CitySerializer(read_only=True)
+    street = StreetSerializer(read_only=True)
 
     class Meta:
         model = Shop
