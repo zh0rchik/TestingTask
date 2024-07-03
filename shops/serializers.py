@@ -1,5 +1,4 @@
 from rest_framework import viewsets, serializers
-
 from shops.models import City, Street, Shop
 
 
@@ -14,8 +13,6 @@ class StreetSerializer(serializers.ModelSerializer):
         model = Street
         fields = ('street_name',)
 
-
-# Serializer that returns streets of a city
 class CityStreetsSerializer(serializers.ModelSerializer):
     streets = StreetSerializer(many=True, read_only=True, source='street_set')
 
@@ -25,6 +22,9 @@ class CityStreetsSerializer(serializers.ModelSerializer):
 
 
 class ShopSerializer(serializers.ModelSerializer):
+    city = CitySerializer(read_only="city_name")
+    street = StreetSerializer(read_only="street_name")
+
     class Meta:
         model = Shop
         fields = ('shop_name', 'street', 'city', 'home', 'open_time', 'close_time')
