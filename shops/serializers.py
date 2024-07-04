@@ -36,3 +36,4 @@ class ShopSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         return Shop.objects.create(**validated_data)
+
