@@ -1,7 +1,6 @@
 from rest_framework import viewsets, serializers
 from shops.models import City, Street, Shop
 
-
 class CitySerializer(serializers.ModelSerializer):
     class Meta:
         model = City
@@ -36,4 +35,3 @@ class ShopSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         return Shop.objects.create(**validated_data)
-

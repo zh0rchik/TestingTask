@@ -8,13 +8,9 @@ from rest_framework.views import APIView
 from shops.models import City, Shop
 from shops.serializers import CitySerializer, CityStreetsSerializer, ShopSerializer
 
-
-# Create your views here.
-
 class CityViewSet(viewsets.ModelViewSet):
     queryset = City.objects.all()
     serializer_class = CitySerializer
-
 
 class CityDetail(APIView):
     def get_object(self, pk):
@@ -47,11 +43,11 @@ class ShopDetail(APIView):
 
         if is_open is not None and is_open.isdigit():
             current_time = datetime.now().time()
-            if int(is_open) == 1:
-                shops = shops.filter(open_time__lte=current_time, close_time__gte=current_time)
 
-            elif int(is_open) == 0:
+            if int(is_open) == 0:
                 shops = shops.filter(~Q(open_time__lte=current_time, close_time__gte=current_time))
+            elif int(is_open) == 1:
+                shops = shops.filter(open_time__lte=current_time, close_time__gte=current_time)
 
         return shops.filter(**filter_params)
 
