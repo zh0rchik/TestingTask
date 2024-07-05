@@ -38,7 +38,7 @@ python manage.py runserver
 ### Данные авторизации суперпользователя:
 Login: admin
 
-Email: admin@admin.ru
+Email: admin@mail.ru
 
 Password: admin
 
