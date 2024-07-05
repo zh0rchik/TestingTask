@@ -35,7 +35,7 @@ class ShopSerializer(serializers.ModelSerializer):
 
     def validate(self, data):
         if data['street'].city != data['city']:
-            raise serializers.ValidationError("The street is not in the specified city.")
+            raise serializers.ValidationError("Этой улицы нет в данном городу")
         return data
 
     def create(self, validated_data):

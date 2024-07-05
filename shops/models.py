@@ -29,5 +29,5 @@ class Shop(models.Model):
 
     def save(self, *args, **kwargs):
         if self.street.city != self.city:
-            raise ValidationError('The street is not in the specified city.')
+            raise ValidationError('Этой улицы нет в городе')
         super().save(*args, **kwargs)
