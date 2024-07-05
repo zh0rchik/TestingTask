@@ -43,3 +43,6 @@ Email: admin@mail.ru
 
 Password: admin
 
+
+# Тестирование
+`GET` [/](http://127.0.0.1:8000/city/)
