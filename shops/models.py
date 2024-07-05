@@ -1,8 +1,5 @@
 from django.db import models
-
-# Create your models here.
-from django.db import models
-
+from django.core.exceptions import ValidationError
 
 class City(models.Model):
     city_name = models.CharField(max_length=50)
@@ -29,3 +26,8 @@ class Shop(models.Model):
 
     def __str__(self):
         return self.shop_name
+
+    def save(self, *args, **kwargs):
+        if self.street.city != self.city:
+            raise ValidationError('The street is not in the specified city.')
+        super().save(*args, **kwargs)

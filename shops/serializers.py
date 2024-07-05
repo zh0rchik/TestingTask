@@ -33,5 +33,10 @@ class ShopSerializer(serializers.ModelSerializer):
         representation['street'] = representation.pop('street_name')
         return representation
 
+    def validate(self, data):
+        if data['street'].city != data['city']:
+            raise serializers.ValidationError("The street is not in the specified city.")
+        return data
+
     def create(self, validated_data):
         return Shop.objects.create(**validated_data)
