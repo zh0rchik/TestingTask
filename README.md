@@ -26,7 +26,8 @@ DATABASES = {
 
 ![image](https://github.com/zh0rchik/TestingTask/assets/99082375/e5501691-8596-4e31-b241-ff803ea5b70d)
 
-Указываем путь к файлу БД, которая есть прикреплена в данном репозитории, и выбираем `Restore`. (Примечение: `Role name` : `postgres`)
+Указываем путь к файлу БД, которая есть прикреплена в данном репозитории, и выбираем `Restore`. (Примечение (вроде как не обязательно): 
+`Role name` : `postgres`)
 
 ![image](https://github.com/zh0rchik/TestingTask/assets/99082375/7d2ab801-7fc9-4788-8880-40c66fc0ff1f)
 
