@@ -85,3 +85,28 @@ Password: admin
         "close_time": "21:00:00"
 }
 ```
+
+Вот что происходит, если попытаться добавить улицу, которой в городе нет. ~Это неправильный json :
+```
+{
+        "shop_name": "Волга",
+        "city": 0,
+        "street": 11,
+        "home": "3",
+        "open_time": "09:00:00",
+        "close_time": "21:00:00"
+}
+```
+ Результат:
+```
+HTTP 400 Bad Request
+Allow: GET, POST, HEAD, OPTIONS
+Content-Type: application/json
+Vary: Accept
+
+{
+    "non_field_errors": [
+        "Этой улицы нет в данном городу"
+    ]
+}
+```
