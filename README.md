@@ -65,10 +65,22 @@ Password: admin
 
 ```
 {
-        "shop_name": "Самарский",
+        "shop_name": "Волга",
         "city": 3,
-        "street":1,
-        "home": "73",
+        "street": 11,
+        "home": "3",
+        "open_time": "09:00:00",
+        "close_time": "21:00:00"
+}
+```
+
+Как отображается json:
+```
+{
+        "shop_name": "Волга",
+        "city": "Самара",
+        "street": "Гагарина",
+        "home": "3",
         "open_time": "09:00:00",
         "close_time": "21:00:00"
 }
